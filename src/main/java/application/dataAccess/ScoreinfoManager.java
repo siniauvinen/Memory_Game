@@ -1,4 +1,4 @@
-package application;
+package application.dataAccess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +12,12 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.criterion.Order;
 
+import application.entities.Scoreinfo;
+
 public class ScoreinfoManager {
 	protected SessionFactory sessionFactory;
 	 
-    protected void setup() {
+    public void setup() {
         // code to load Hibernate Session factory
     	final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
     	        .configure() // configures settings from hibernate.cfg.xml

@@ -11,7 +11,7 @@
 		    <property name="connection.password">olio</property>
 		    <property name="show_sql">true</property>
 		            
-		    <mapping class="application.Scoreinfo" />
+		    <mapping class="application.entities.Scoreinfo" />
 	     
 	  </session-factory>
   
