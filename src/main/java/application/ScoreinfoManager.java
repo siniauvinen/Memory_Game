@@ -49,7 +49,7 @@ public class ScoreinfoManager {
     }
  
     public void read(int id) {
-        // code to get a scoreinfo
+        // code to get one scoreinfo
     	Session session = sessionFactory.openSession();
    	 
         Scoreinfo scoreinfo = session.get(Scoreinfo.class, id);
@@ -63,6 +63,7 @@ public class ScoreinfoManager {
     
     @SuppressWarnings("unchecked")
     public List<Scoreinfo> getAll() {
+    	// code to get the top 10 best scoreinfo
     	Session session = sessionFactory.openSession();   	
     	List<Scoreinfo> myList = new ArrayList<Scoreinfo>(session.createCriteria(Scoreinfo.class)
     			.addOrder(Order.asc("score"))
@@ -104,9 +105,14 @@ public class ScoreinfoManager {
         session.close();
     }
 
-	/*public static void main(String[] args) {
+    /* For simple testing of the DB connection
+    
+	public static void main(String[] args) {
     	ScoreinfoManager manager = new ScoreinfoManager();
         manager.setup();
+        manager.create();
+        manager.read();
+        manager.delete();
         manager.exit();
 
 	}*/
