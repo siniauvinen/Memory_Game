@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 
-public class FxFXMLController {
+public class LeaderboardController {
 	
 	
 	@FXML private TableView<Scoreinfo> tblScore = new TableView<Scoreinfo>();
@@ -40,7 +40,7 @@ public class FxFXMLController {
     private ResourceBundle resources;
      
     // Add a public no-args constructor
-    public FxFXMLController() 
+    public LeaderboardController() 
     {
     }
      

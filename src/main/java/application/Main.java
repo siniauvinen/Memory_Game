@@ -31,15 +31,15 @@ public class Main extends Application {
         	
         	// Path to the FXML File
            
-            String fxmlDocPath = "src\\main\\java\\application\\views\\fxml\\FxFXML.fxml";  // VIITTAUS FXML-TIEDOSTOON
-            FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
+            String fxmlLeaderboardPath = "src\\main\\java\\application\\views\\fxml\\LeaderboardView.fxml";  // VIITTAUS FXML-TIEDOSTOON
+            FileInputStream fxmlStream = new FileInputStream(fxmlLeaderboardPath);
             
             // Create the Pane and all Details FROM FXML -FILE
             VBox root = (VBox) loader.load(fxmlStream);       // EKSPLISIITTINEN TYYPPIMUUNNOS (VBox)
 		
 
             //Create the Scene
-            Scene scene = new Scene(root);
+            Scene sceneLeaderboard = new Scene(root);
 			
 			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -51,7 +51,7 @@ public class Main extends Application {
 			
 			
 			
-			primaryStage.setScene(scene);
+			primaryStage.setScene(sceneLeaderboard);
 			primaryStage.show();
 	}
 }
