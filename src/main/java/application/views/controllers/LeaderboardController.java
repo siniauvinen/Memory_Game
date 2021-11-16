@@ -24,7 +24,7 @@ public class LeaderboardController {
 	
 	ObservableList<Scoreinfo> data = FXCollections.observableArrayList();
 
-	@FXML private TableColumn<Scoreinfo, String> colID = new TableColumn<>("#"); 
+	@FXML private TableColumn<Scoreinfo, String> colID = new TableColumn<>("    #"); 
 	@FXML private TableColumn<Scoreinfo, String> colName = new TableColumn<>("NIMIMERKKI");
     @FXML private TableColumn<Scoreinfo, String> colScore = new TableColumn<>("PISTEET");
 
@@ -46,8 +46,6 @@ public class LeaderboardController {
      
     @FXML
     private void initialize() {
-    	System.out.print("test");
-    	System.out.print(data.size());
     	
     	colID.setCellValueFactory(new PropertyValueFactory<Scoreinfo, String>("id"));
     	colName.setCellValueFactory(new PropertyValueFactory<Scoreinfo, String>("user_name"));

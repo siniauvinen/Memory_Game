@@ -1,2 +1,49 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.button {
+    -fx-background-color: white;
+    -fx-border-radius: 0px;
+}
+.button:hover{
+    -fx-background-color: #eeec62;
+    -fx-text-background-color: purple;
+}
+
+.table-view .column-header {
+    -fx-background-color: #03346c;
+    -fx-border-color: #03346c;
+    -fx-text-background-color: white;
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-view .table-column {
+    -fx-alignment: CENTER;
+  }
+
+.table-view:row-selection .table-row-cell:filled:hover {
+    -fx-background-color: #4F1271;
+    -fx-text-background-color: yellow;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #cbb1f518;
+}
+
+.table-row-cell:even{
+    -fx-background-color: white;
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-color: transparent;
+}
+
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+}
+
 

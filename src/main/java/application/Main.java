@@ -42,7 +42,7 @@ public class Main extends Application {
             Scene sceneLeaderboard = new Scene(root);
 			
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			sceneLeaderboard.getStylesheets().add(getClass().getResource("views\\css\\application.css").toExternalForm());
 
 			Image icon = new Image(".\\.\\img\\logo.png");
 			primaryStage.getIcons().add(icon);
