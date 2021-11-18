@@ -19,11 +19,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class LeaderboardController {
 	
-	
+	// Create new tableview
 	@FXML private TableView<Scoreinfo> tblScore = new TableView<Scoreinfo>();
 	
+	// Create observablelist for tableview
 	ObservableList<Scoreinfo> data = FXCollections.observableArrayList();
 
+	// Create columns for tableview
 	@FXML private TableColumn<Scoreinfo, String> colID = new TableColumn<>("    #"); 
 	@FXML private TableColumn<Scoreinfo, String> colName = new TableColumn<>("NIMIMERKKI");
     @FXML private TableColumn<Scoreinfo, String> colScore = new TableColumn<>("PISTEET");
@@ -47,19 +49,21 @@ public class LeaderboardController {
     @FXML
     private void initialize() {
     	
+    	// Initializes tableview columns with data properties from scoreinfo
     	colID.setCellValueFactory(new PropertyValueFactory<Scoreinfo, String>("id"));
     	colName.setCellValueFactory(new PropertyValueFactory<Scoreinfo, String>("user_name"));
     	colScore.setCellValueFactory(new PropertyValueFactory<Scoreinfo, String>("score"));
     	
-    	tblScore.setItems(data);
-    	tblScore.getColumns().addAll(colID, colName, colScore);
+    	
+    	tblScore.setItems(data); // set empty observablelist to tableview 
+    	tblScore.getColumns().addAll(colID, colName, colScore); // add columns to tableview
     	
     	getTopTen(); //Get top 10 players
     }
     
     private void getTopTen() {
-    	ScoreinfoManager scoreinfoManager = new ScoreinfoManager();
-    	scoreinfoManager.setup();
+    	ScoreinfoManager scoreinfoManager = new ScoreinfoManager(); // Create new scoreinfoManager object
+    	scoreinfoManager.setup(); // Load Hibernate Session factory
     	data.clear(); //Clear list
     	data.addAll(scoreinfoManager.getAll()); //Get top 10 from DB
         for (int i=0; i < data.size(); i++) { //Set rankings

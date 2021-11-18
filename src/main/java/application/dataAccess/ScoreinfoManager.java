@@ -49,7 +49,21 @@ public class ScoreinfoManager {
         session.getTransaction().commit();
         session.close();
     }
- 
+    
+ // code to get the top 10 best scoreinfo
+    
+    @SuppressWarnings("unchecked")
+    public List<Scoreinfo> getAll() {
+    	Session session = sessionFactory.openSession();  // Open Hibernate Session 	
+    	List<Scoreinfo> myList = new ArrayList<Scoreinfo>(session.createCriteria(Scoreinfo.class) // Create list with all scoreinfos
+    			.addOrder(Order.asc("score")) // Set ascending order based on scores
+    			.setMaxResults(10) // Order max 10 scoreinfos
+    			.list());  // array to list
+    	session.close();
+    	
+    	return myList;
+    }
+    
     public void read(int id) {
         // code to get one scoreinfo
     	Session session = sessionFactory.openSession();
@@ -61,19 +75,6 @@ public class ScoreinfoManager {
 
      
         session.close();
-    }
-    
-    @SuppressWarnings("unchecked")
-    public List<Scoreinfo> getAll() {
-    	// code to get the top 10 best scoreinfo
-    	Session session = sessionFactory.openSession();   	
-    	List<Scoreinfo> myList = new ArrayList<Scoreinfo>(session.createCriteria(Scoreinfo.class)
-    			.addOrder(Order.asc("score"))
-    			.setMaxResults(10)
-    			.list());   	
-    	session.close();
-    	
-    	return myList;
     }
  
     public void update(int id, String user_name, int score) {

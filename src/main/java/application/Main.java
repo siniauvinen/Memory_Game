@@ -37,10 +37,8 @@ public class Main extends Application {
             // Create the Pane and all Details FROM FXML -FILE
             VBox root = (VBox) loader.load(fxmlStream);       // EKSPLISIITTINEN TYYPPIMUUNNOS (VBox)
 		
-
             //Create the Scene
             Scene sceneLeaderboard = new Scene(root);
-			
 			
 			sceneLeaderboard.getStylesheets().add(getClass().getResource("views\\css\\application.css").toExternalForm());
 
@@ -48,8 +46,6 @@ public class Main extends Application {
 			primaryStage.getIcons().add(icon);
 			primaryStage.setTitle("   Muistipeli");
 			primaryStage.setResizable(false);
-			
-			
 			
 			primaryStage.setScene(sceneLeaderboard);
 			primaryStage.show();
